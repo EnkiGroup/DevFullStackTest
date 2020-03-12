@@ -21,9 +21,9 @@ As informações abaixo são necessárias para que você desenvolva e complete o
 
 ### 2 - Enunciado principal
 
-Deveremos criar um sistema de registro de recados que a partir de uma regra específica deva permitir relacionar os recados com os existentes.
+Criar um sistema de registro de recados que agrupe automaticamente recados relacionados.
 
-### 3. Estrutura
+### 3. Estrutura do recado
 
 O recado é composto pela seguinte estrutura:
 
@@ -35,17 +35,35 @@ O recado é composto pela seguinte estrutura:
         Data do recado
         Agrupado com
 
-### 4. Regra de agrupamento
+### 4. Regras do negócio
 
-As regras para agrupar recados são:
+Este será um sistema para registro e visualização de recados, onde uma pessoa pode criar um recado que ficará guardado para apresentação.
 
-* Somente agrupa com recados recebidos a menos de 6 meses.
-* Recados do mesmo remetente (De).
-* Que o assunto seja igual relacionado.
-  * São considerados assuntos relacionados quando o assunto é o mesmo do outro recado, porém começa com:
+O sistema permite que o usuário relacione recados, que devem ser apresentados juntos, como um grupo no momento da apresentação.
+
+O recado sendo cadastrado deve ser relacionado a outro automaticamente se houver outro recado nas seguintes condições gravado no sistema:
+
+1. Que tenha remetente (De) ou destinatario (Para) igual ao remetente do recado cadastrado.
+2. Que tenha sido registrado a no máximo 6 meses.
+3. Que contenha o mesmo assunto, mas ignorando se ele iniciar com:
     * referente:
     * respondendo:
     * complementando:
+4. Os recados devem se relacionar ao primeiro recado cadastrado, ou seja, de menor data.
+
+**Exemplo de lógica de agrupamento**
+
+| Identificador | Data recado | Assunto                         | De      | Para    | Deve agrupar com |
+| ------------- | ----------- | ------------------------------- | ------- | ------- | ---------------- |
+| 1             | 01/01/2019  | Primeiro recado                 | Fulano  | Ciclano |                  |
+| 2             | 05/01/2019  | respondendo: Primeiro recado    | Ciclano | Fulano  | 1                |
+| 3             | 02/02/2019  | Segundo recado                  | Ciclano | Fulano  |                  |
+| 4             | 05/03/2019  | complementando: Primeiro recado | Ciclano | Fulano  | 1                |
+| 5             | 25/09/2019  | referente: Primeiro recado      | Fulano  | Ciclano | 1                |
+| 6             | 30/12/2019  | respondendo: Segundo recado     | Fulano  | Ciclano |                  |
+| 7             | 01/01/2020  | Primeiro recado                 | Fulano  | Deltano | 1                |
+| 8             | 01/01/2020  | Primeiro recado                 | Deltano | Fulano  | 1                |
+| 9             | 01/07/2020  | Primeiro recado                 | Fulano  | Deltano |                  |
 
 ### 5. Telas
 
