@@ -3,12 +3,19 @@
 ## Resumo da vaga
 
 👔 **Vaga**: Desenvolvedor
+
 💼 **Senioridade**: Pleno
+
 🏣 **Empresa**: enContact (www.encontact.com.br)
+
 📍  **Localização**: Av. Paulista em São Paulo ou Vaga aceita 100% remoto.
+
 🧐 **Responsabilidades**: Apoiar área de suporte, desenvolvimento de melhorias e correções na plataforma.
+
 🧠 **Conhecimentos Obrigatórios**: C#, Javascript, SQL, Orientação Objetos.
+
 🧠 **Diferenciais**: Ser pro-ativo, ter boa comunicação.
+
 👉 **Detalhes/Candidatar**: vagas[arroba]encontact.com.br
 
 ## Descrição da vaga
