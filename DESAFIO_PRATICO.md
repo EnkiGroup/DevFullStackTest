@@ -49,7 +49,7 @@ O recado sendo cadastrado deve ser relacionado a outro automaticamente se houver
     * referente:
     * respondendo:
     * complementando:
-4. Os recados devem se relacionar ao primeiro recado cadastrado, ou seja, de menor data.
+4. Os recados devem apontar o relacionamento para o primeiro recado do grupo, mesmo que o encontrado na regra seja o mais recente.
 
 **Exemplo de lógica de agrupamento**
 
@@ -59,7 +59,7 @@ O recado sendo cadastrado deve ser relacionado a outro automaticamente se houver
 | 2             | 05/01/2019  | respondendo: Primeiro recado    | Ciclano | Fulano  | 1                |
 | 3             | 02/02/2019  | Segundo recado                  | Ciclano | Fulano  |                  |
 | 4             | 05/03/2019  | complementando: Primeiro recado | Ciclano | Fulano  | 1                |
-| 5             | 25/09/2019  | referente: Primeiro recado      | Fulano  | Ciclano | 1                |
+| 5             | 01/09/2019  | referente: Primeiro recado      | Fulano  | Ciclano | 1                |
 | 6             | 30/12/2019  | respondendo: Segundo recado     | Fulano  | Ciclano |                  |
 | 7             | 01/01/2020  | Primeiro recado                 | Fulano  | Deltano | 1                |
 | 8             | 01/01/2020  | Primeiro recado                 | Deltano | Fulano  | 1                |
